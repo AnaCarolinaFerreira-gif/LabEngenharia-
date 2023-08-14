@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 1</title>
+<script>
+    function isPrime(number) {
+        if (number <= 1) {
+            return false;
+        }
+        
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+
+    var userInput = prompt("Digite um número inteiro positivo:");
+
+    if (userInput !== null) {
+        var number = parseInt(userInput);
+
+        if (!isNaN(number) && number >= 0) {
+            if (isPrime(number)) {
+                alert(number + " é um número primo!");
+            } else {
+                alert(number + " não é um número primo.");
+            }
+        } else {
+            alert("Por favor, digite um número inteiro positivo válido.");
+        }
+    } else {
+        alert("Entrada cancelada.");
+    }
+</script>
+<body>
+    <h1>Atividade da semana1</h1>
+    <a href="semana1.html">Voltar</a>
+</body>
+</html>
