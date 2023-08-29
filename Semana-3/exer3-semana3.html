@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3</title>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+        document.getElementById("botao").addEventListener("click", () => {
+            const valor = document.getElementById("texto").value;
+            var re = /[\W_]/g;
+            var lowRegStr = valor.toLowerCase().replace(re, '');
+            var reverseStr = lowRegStr.split('').reverse().join('');
+            if(reverseStr === lowRegStr) {
+                alert("Esse texto é um palíndromo")
+            }else {
+                alert("Esse texto não é um palíndromo")
+
+            }
+        })
+    })
+</script>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="texto" class="form-control" placeholder="Digite um texto...">
+        <input type="button" id="botao" value="Verificar se é Palíndromo">
+    </form>
+
+
+        <h1>Atividade da semana3</h1>
+        <a href="semana3.html">Voltar</a>
+</body>
+
+</html>
