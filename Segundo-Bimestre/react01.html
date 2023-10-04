@@ -1,0 +1,54 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <script React, { useState, useEffect } from 'react';
+
+function Letreiro() {
+  const texto = "Venha estudar na Fatec";
+  const [textoExibido, setTextoExibido] = useState('');
+  const [indice, setIndice] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (indice < texto.length) {
+        setTextoExibido(texto.substring(0, indice + 1));
+        setIndice(indice + 1);
+      } else {
+        clearInterval(interval);
+      }
+    }, 200); 
+    return () => {
+      clearInterval(interval);
+    };
+  }, [indice]);
+
+  return (
+    <div>
+      <h1>{textoExibido}</h1>
+    </div>
+  );
+
+
+    export default Letreiro;
+    import React from 'react';
+    import ReactDOM from 'react-dom';
+    import Letreiro from './Letreiro';
+
+    ReactDOM.render(
+    <Letreiro />,
+    document.getElementById('root')
+        );
+
+
+
+</script>
+
+ </body>
+ </html>
+ 
+ 
